@@ -22,10 +22,6 @@ def BellmanFord(graph: Graph, origem: int):
         if dt[u] + peso < dt[v]:
             print("O grafo contém um ciclo negativo.")
             return None, None, True
-    # for u in graph.adj:
-    #     for v in graph.adj[u]:
-    #         peso = graph.capacity.get((u, v), float('inf'))
-    #         if dt[u] + peso < dt[v]:  # Se ainda houver relaxamento, há um ciclo negativo
-    #             raise ValueError("O grafo contém um ciclo negativo.")
+
 
     return dt, rot, False
