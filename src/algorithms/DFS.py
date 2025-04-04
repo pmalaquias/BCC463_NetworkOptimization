@@ -28,3 +28,4 @@ def DFS(graph: Graph, v: int, visited, result):
             DFS(graph, w, visited, result)
         elif (v, w) not in graph.explored_edges:
             graph.explored_edges.add((v, w))  # Explorar aresta
+
