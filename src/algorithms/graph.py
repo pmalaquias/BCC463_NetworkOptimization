@@ -18,7 +18,7 @@ class Graph:
         show_graph():
     """""
 
-    def __init__(self, n, directed):
+    def __init__(self, n: int, directed = False):
         self.n = n # número de vértices
         self.directed = directed # grafo direcionado ou não
         self.adj = [[] for _ in range(n + 1)] # lista de adjacências
@@ -28,7 +28,7 @@ class Graph:
     def add_edge(self, u, v, w):
         """Adiciona uma aresta de u para v com peso w"""
         self.adj[u].append(v)
-        self.adj[v].append(u) #Adiciona uma aresta reverso para o grafo residual
+        #self.adj[v].append(u) #Adiciona uma aresta reverso para o grafo residual
         self.capacity[(u, v)] = w
         if not self.directed: # se o grafo não é direcionado
             self.adj[v].append(u)
@@ -47,9 +47,23 @@ class Graph:
             2 ->
 
         """
-        for u in range(self.n):
-            print(u, end=' -> ')
-            for v in self.adj[u]:
-                print(v, end=' ')
-            print()
-        
+        # for u in range(self.n):
+        #     print(u+1, end=' -> ')
+        #     for v in self.adj[u+1]:
+        #         print(v, end=' ')
+        #     print()
+
+        if(self.directed):
+            print('Grafo direcionado:')
+            for u in range(self.n):
+                print(u+1, end=' -> ') #imprime o vértice 
+                for v in self.adj[u+1]:
+                    print(v, end=' ') #imprime os vértices adjacentes
+                print()
+        else:
+            print('Grafo não direcionado:')
+            for u in range(self.n):
+                print(u+1, end=' -> ')
+                for v in self.adj[u+1]:
+                    print(v, end=' ')
+                print()

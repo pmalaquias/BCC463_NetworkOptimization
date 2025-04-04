@@ -1,7 +1,9 @@
 
 import os
 
+from algorithms.BFS import BFS
 from algorithms.DFS import DFS
+from algorithms.Dijkstra import Dijkstra, mostrar_resultado
 from algorithms.graph import Graph
 from algorithms.readFile import read_file
 
@@ -9,7 +11,7 @@ from algorithms.readFile import read_file
 def main():
     # Caminho do arquivo no diretório ../input/
     diretorio_base = os.path.dirname(os.path.abspath(__file__))  # Diretório do script
-    caminho_arquivo = os.path.join(diretorio_base, "../input/input2.txt")
+    caminho_arquivo = os.path.join(diretorio_base, "../input/input3.txt")
 
 
 
@@ -32,8 +34,17 @@ def main():
     visited = [False] * (g.n + 1)
     result = []
     DFS(g, i, visited, result)
-    print(" ".join(map(str, result)))
+    print(" ".join(map(str, result))) #imprimindo o resultado
 
+    #realizando a busca em largura
+    print("BFS:")
+    BFS(g, i)
+
+    #realizando o algoritmo de Dijkstra
+    print("Dijkstra:")
+    #importando a função Dijkstra
+    dt, rot =Dijkstra(g, i)
+    mostrar_resultado(dt, rot, i)
 
 
 
