@@ -1,10 +1,12 @@
 
 import os
 
+from algorithms.BellmanFord import BellmanFord
 from algorithms.BFS import BFS
 from algorithms.DFS import DFS
-from algorithms.Dijkstra import Dijkstra, mostrar_resultado
+from algorithms.Dijkstra import Dijkstra
 from algorithms.graph import Graph
+from algorithms.mostrar_resultados import mostrar_resultado
 from algorithms.readFile import read_file
 
 
@@ -29,25 +31,32 @@ def main():
     print('Grafo:')
     g.show_graph()
 
-    #realizando a busca em profundidade
-    print("DFS:")
-    visited = [False] * (g.n + 1)
-    result = []
-    DFS(g, i, visited, result)
-    print(" ".join(map(str, result))) #imprimindo o resultado
+    # #realizando a busca em profundidade
+    # print("DFS:")
+    # visited = [False] * (g.n + 1)
+    # result = []
+    # DFS(g, i, visited, result)
+    # print(" ".join(map(str, result))) #imprimindo o resultado
 
-    #realizando a busca em largura
-    print("BFS:")
-    BFS(g, i)
+    # #realizando a busca em largura
+    # print("BFS:")
+    # BFS(g, i)
 
-    #realizando o algoritmo de Dijkstra
-    print("Dijkstra:")
-    #importando a função Dijkstra
-    dt, rot =Dijkstra(g, i)
-    mostrar_resultado(dt, rot, i)
+    # #realizando o algoritmo de Dijkstra
+    # print("Dijkstra:")
+    # #importando a função Dijkstra
+    # dt, rot =Dijkstra(g, i)
+    # mostrar_resultado(dt, rot, i)
 
+    # realizando o algoritmo de Bellman-Ford
+    print("Bellman-Ford:")
+    # importando a função BellmanFord
+    dt, rot, has_negative_cycle = BellmanFord(g, i)
+    
+    if not has_negative_cycle:
+        mostrar_resultado(dt, rot, i)
 
 
 if __name__ == '__main__':
-    print('This is the main module')
+    #print('This is the main module')
     main() 
