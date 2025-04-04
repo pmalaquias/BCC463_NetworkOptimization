@@ -49,19 +49,3 @@ def Dijkstra (graph: Graph, origem: int):
                 heapq.heappush(fila_prioridade, (nova_dist, viz))
 
     return dt, rot
-
-def reconstruir_caminho( rot, destino):
-    caminho =[]
-    atual = destino
-    while atual is not None:
-        caminho.append(atual)
-        atual = rot[atual]
-    return caminho[::-1]
-
-
-def mostrar_resultado(dt, rot, origem):
-    """Exibe os resultados no formato desejado."""
-    for destino in sorted(dt.keys()):
-        if destino != origem and dt[destino] != float('inf'):
-            caminho = reconstruir_caminho(rot, destino)
-            print(f"{destino} ({dt[destino]}) : {' '.join(map(str, caminho))}")
