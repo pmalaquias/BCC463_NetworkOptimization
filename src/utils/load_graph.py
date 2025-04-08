@@ -24,6 +24,7 @@ def load_graph(menu_option: int, read_file, Graph):
 
         entrada = read_file(caminho_arquivo)
         n, m = map(int, entrada[0].split())
+        i = None
         g = Graph(n, directed=True)
 
     # Adiciona as arestas
