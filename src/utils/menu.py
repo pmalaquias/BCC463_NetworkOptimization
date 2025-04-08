@@ -1,0 +1,11 @@
+def menu():
+    print("-------------------------------")
+    print("Escolha uma opção:")
+    print("1.Exibir Grafo")
+    print("2. Busca em Profundidade (DFS)")
+    print("3. Busca em Largura (BFS)")
+    print("4. Algoritmo de Dijkstra")
+    print("5. Algoritmo de Bellman-Ford")
+    print("6. Algoritmo de Johnson")
+    print("0. Sair")
+    print("-------------------------------")
