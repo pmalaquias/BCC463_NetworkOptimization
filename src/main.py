@@ -30,36 +30,34 @@ def main():
         g, i = load_graph(menu_option, read_file, Graph)
 
 
-        if menu_option == 1:
-            print('Grafo:')
-            g.show_graph()
-        elif menu_option == 2:
-            print("DFS:")
-            visited = [False] * (g.n + 1)
-            result = []
-            DFS(g, i, visited, result)
-            print(" ".join(map(str, result)))
-        elif menu_option == 3:
-            print("BFS:")
-            BFS(g, i)
-        elif menu_option == 4:
-            print("Dijkstra:")
-            dt, rot = Dijkstra(g, i)
-            mostrar_resultado(dt, rot, i)
-        elif menu_option == 5:
-            print("Bellman-Ford:")
-            dt, rot, has_negative_cycle = BellmanFord(g, i)
-            if not has_negative_cycle:
+        match menu_option:
+            case 1:
+                print('Grafo:')
+                g.show_graph()
+            case 2:
+                print("DFS:")
+                visited = [False] * (g.n + 1)
+                result = []
+                DFS(g, i, visited, result)
+                print(" ".join(map(str, result)))
+            case 3:
+                print("BFS:")
+                BFS(g, i)
+            case 4:
+                print("Dijkstra:")
+                dt, rot = Dijkstra(g, i)
                 mostrar_resultado(dt, rot, i)
-        elif menu_option == 6:
-            print("Johnson:")
-            matriz = johnson(g)
-            if matriz:
-                for linha in matriz:
-                    print(' '.join(str(int(x)) if x != float('inf') else 'INF' for x in linha))
-        elif menu_option == 0:
-            print("Saindo...")
-            break
+            case 5:
+                print("Bellman-Ford:")
+                dt, rot, has_negative_cycle = BellmanFord(g, i)
+                if not has_negative_cycle:
+                    mostrar_resultado(dt, rot, i)
+            case 6:
+                print("Johnson:")
+                matriz = johnson(g)
+                if matriz:
+                    for linha in matriz:
+                        print(' '.join(str(int(x)) if x != float('inf') else 'INF' for x in linha))
 
         print("\n")
         menu()
