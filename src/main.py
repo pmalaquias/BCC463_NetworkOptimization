@@ -158,9 +158,7 @@ def main():
                 maxflow = Dinitz(f)
                 print(f"Fluxo máximo com Dinitz: {maxflow}")
                 exibir_grafo_graficamente(f)
-
-           
-                
+       
 
         print("\n")
         menu()
