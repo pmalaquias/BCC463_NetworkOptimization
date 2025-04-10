@@ -47,11 +47,6 @@ class Graph:
             2 ->
 
         """
-        # for u in range(self.n):
-        #     print(u+1, end=' -> ')
-        #     for v in self.adj[u+1]:
-        #         print(v, end=' ')
-        #     print()
 
         if(self.directed):
             print('Grafo direcionado:')
