@@ -1,0 +1,18 @@
+-------------------------------
+Escolha uma opção:
+ 1. Exibir Grafo
+ 2. Busca em Profundidade (DFS)
+ 3. Busca em Largura (BFS)
+ 4. Algoritmo de Dijkstra
+ 5. Algoritmo de Bellman-Ford
+ 6. Algoritmo de Johnson
+ 7. Exibir Fluxo
+ 8. Verificar fluxo viável
+ 9. Algoritmo de Fluxo Máximo
+10. Algoritmo de Corte Mínimo
+11. Grafo de Aumento de Fluxo
+12. Algoritmo de Ford-Fulkerson
+13. Algoritmo de Dinitz
+ 0. Sair
+-------------------------------
+Digite sua opção: 

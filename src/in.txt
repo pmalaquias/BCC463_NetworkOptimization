@@ -1,0 +1,16 @@
+1 input1.txt
+1 input1_1.txt
+1 input2.txt
+1 input3.txt
+1 input4.txt
+1 input5.txt
+1 input6.txt
+1 input7.txt
+1 input8.txt
+1 input9.txt
+1 input10.txt
+1 input11.txt
+1 input12.txt
+1 input13.txt
+1 input14.txt
+0

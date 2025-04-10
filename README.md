@@ -32,3 +32,94 @@ Em seguida haverá *m* linhas, cada uma contendo três inteiros, indicando o vé
 2 4 1  
 3 4 -1
 4 1 -1
+
+## Estrutura do Projeto
+
+O projeto está organizado da seguinte forma:
+
+. ├── input/ # Arquivos de entrada para os algoritmos
+│ ├── input1.txt # Exemplos de grafos para testes
+│ ├── input2.txt
+│ └── ... # Outros arquivos de entrada
+├── src/ # Código-fonte principal
+│ ├── main.py # Arquivo principal para execução do programa
+│ ├── algorithms/ # Implementação dos algoritmos
+│ │ ├── BellmanFord.py
+│ │ ├── Dijkstra.py
+│ │ ├── FordFulkerson.py
+│ │ ├── ...
+│ ├── utils/ # Utilitários e funções auxiliares
+│ │ ├── readFile.py
+│ │ ├── load_graph.py
+│ │ ├── exibir_graficamente.py
+│ │ └── ...
+├── README.md # Documentação do projeto
+├── requirements.txt # Dependências do projeto
+└── .gitignore # Arquivos ignorados pelo Git
+
+## Como Executar
+
+1. Certifique-se de ter o Python 3.8 ou superior instalado.
+2. Instale as dependências do projeto executando:
+
+    ``` bash
+        pip install -r requirements.txt
+    ```
+
+3. Execute o programa principal:
+
+    ``` bash
+        python src/main.py 
+    ```
+
+## Dependências
+
+As bibliotecas utilizadas no projeto estão listadas no arquivo ``requirements.txt``. As principais são:
+
+- ``numpy``: Para operações matemáticas.
+- ``networkx``: Para manipulação e visualização de grafos.
+- ``matplotlib``: Para exibição gráfica dos grafos.
+  
+### Exemplos de Uso
+
+Exemplo 1: Algoritmo de Dijkstra
+
+Entrada:
+
+```` plaintext
+4 6 1 1
+1 2 1
+1 3 1
+1 4 1
+2 3 1
+2 4 1
+3 4 1
+````
+
+Saída:
+
+```` plaintext
+Caminho mais curto até 4: 1 → 4
+Distância total: 1
+````
+
+Exemplo 2: Algoritmo de Fluxo Máximo (Ford-Fulkerson)
+
+Entrada:
+
+```` plaintext
+4 5 1 1
+1 2 10
+1 3 5
+2 3 15
+2 4 10
+3 4 10
+````
+
+Saída:
+
+```` plaintext
+Fluxo máximo entre 1 e 4: 15
+````
+
+## Descrição dos Algoritmos
