@@ -107,7 +107,6 @@ def exibir_grafo_graficamente(grafo, fluxo_maximo=None, caminho_mais_curto=None)
 
     plt.axis("off")
     plt.show(block = False) # Não bloqueia o loop do programa
-    plt.pause(3)  # Pausa para garantir que a janela seja exibida
     plt.close()  # Fecha a janela após exibir o grafo
 
 def exibir_grafo_de_aumento(grafo, aumento):
